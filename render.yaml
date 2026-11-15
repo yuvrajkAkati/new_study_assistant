@@ -1,0 +1,11 @@
+# Render Blueprint: one free web service that builds the React app and runs the Express server.
+services:
+  - type: web
+    name: study-assistant
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start # builds the React app, then starts the server on Render's PORT
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false # Render asks you for the value when you create the Blueprint
